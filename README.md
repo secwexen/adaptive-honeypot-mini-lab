@@ -20,33 +20,44 @@ Designed as a **short-term demo project**, deployable on Raspberry Pi or Docker.
 ## Project Structure
 
 ```
-adaptive-honeypot-mini-lab/
-├── README.md
-├── requirements.txt
-├── docker-compose.yml
+adaptive-honeypot/
+│
+├── README.md              
+├── requirements.txt       
+├── docker-compose.yml     
+│
 ├── config/
-│   ├── settings.yaml
-│   └── rules.yaml
+│   ├── settings.yaml      # General settings (ports, services, SIEM integration)
+│   └── rules.yaml         # Behavior rules (e.g., brute force → service switch)
+│
 ├── core/
-│   ├── honeypot.py
-│   ├── ssh_service.py
-│   ├── http_service.py
-│   └── ftp_service.py
+│   ├── __init__.py
+│   ├── honeypot.py        # Honeypot core logic
+│   ├── ssh_service.py     # Fake SSH service
+│   ├── http_service.py    # Fake HTTP service
+│   └── ftp_service.py     # Optional fake FTP service
+│
 ├── analysis/
-│   ├── log_collector.py
-│   ├── pattern_analyzer.py
-│   └── decision_engine.py
+│   ├── __init__.py
+│   ├── log_collector.py   # Collects logs
+│   ├── pattern_analyzer.py# Regex/ML-based attack analysis
+│   └── decision_engine.py # Adaptive service switching
+│
 ├── integration/
-│   ├── siem_connector.py
-│   ├── alert_system.py
-│   └── dashboard.py
+│   ├── __init__.py
+│   ├── siem_connector.py  # Splunk/ELK integration
+│   ├── alert_system.py    # Email/webhook alerts
+│   └── dashboard.py       # Flask/Django visualization
+│
 ├── deployment/
-│   ├── dockerfile
-│   └── sandbox_setup.sh
+│   ├── dockerfile         # Docker image
+│   ├── vagrantfile        # Optional VM setup
+│   └── sandbox_setup.sh   # Isolation script
+│
 └── tests/
-    ├── test_core.py
-    ├── test_analysis.py
-    └── test_integration.py
+    ├── test_core.py       # Tests for honeypot modules
+    ├── test_analysis.py   # Tests for analyzer & decision engine
+    └── test_integration.py# Tests for SIEM & alert system
 ```
 
 ---
