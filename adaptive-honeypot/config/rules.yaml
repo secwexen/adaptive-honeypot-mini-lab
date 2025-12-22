@@ -1,0 +1,32 @@
+# Behavior rules based on simple patterns
+# "patterns" are checked against events; "actions" execute on match.
+rules:
+  - name: "SSH brute force"
+    match:
+      service: "ssh"
+      type: "auth_failed_count"
+      threshold: 5
+      window_seconds: 60
+    actions:
+      - type: "tag"
+        value: "brute-force"
+      - type: "switch"
+        to_service: "http"   # emphasize web surface after repeated SSH attempts
+
+  - name: "HTTP directory traversal attempt"
+    match:
+      service: "http"
+      type: "payload_regex"
+      regex: "(\\./|\\../|%2e%2e/)"
+    actions:
+      - type: "tag"
+        value: "dir-traversal"
+      - type: "alert"
+
+  - name: "FTP probe"
+    match:
+      service: "ftp"
+      type: "connect"
+    actions:
+      - type: "tag"
+        value: "ftp-probe"
