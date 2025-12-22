@@ -1,6 +1,5 @@
 # CODEOWNERS
 # This file defines repository ownership rules.
-# Place it under .github/CODEOWNERS
 
 # Default owner for everything
 *       @X99874
