@@ -1,0 +1,15 @@
+# CODEOWNERS
+# This file defines repository ownership rules.
+# Place it under .github/CODEOWNERS
+
+# Default owner for everything
+*       @X99874
+
+# Specific ownership per directory
+/adaptive-honeypot/  @X99874
+/config/             @X99874
+/core/               @X99874
+/analysis/           @X99874
+/integration/        @X99874
+/deployment/         @X99874
+/tests/              @X99874
