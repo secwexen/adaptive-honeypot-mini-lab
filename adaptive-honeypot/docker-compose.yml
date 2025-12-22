@@ -1,1 +1,13 @@
-
+version: "3.8"
+services:
+  adaptive-honeypot:
+    build: ./deployment
+    container_name: adaptive-honeypot
+    ports:
+      - "2222:2222"   # SSH fake
+      - "8080:8080"   # HTTP fake
+      - "2121:2121"   # FTP fake (disabled by default)
+      - "9090:9090"   # dashboard (disabled by default)
+    volumes:
+      - ./:/app
+    command: ["python", "core/honeypot.py"]
