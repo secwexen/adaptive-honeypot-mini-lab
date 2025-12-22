@@ -1,0 +1,24 @@
+# General settings for services, ports, and SIEM integration
+services:
+  ssh: true
+  http: true
+  ftp: false
+
+ports:
+  ssh: 2222
+  http: 8080
+  ftp: 2121
+
+siem:
+  enabled: true
+  endpoint: ""   # optional HTTP endpoint (leave empty to log locally)
+  index: "honeypot-events"
+  default_tags: ["adaptive-honeypot", "demo"]
+
+dashboard:
+  enabled: false
+  port: 9090
+
+logging:
+  level: "INFO"
+  file: "honeypot.log"
