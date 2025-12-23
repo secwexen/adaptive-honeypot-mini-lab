@@ -27,37 +27,37 @@ adaptive-honeypot/
 ├── docker-compose.yml     
 │
 ├── config/
-│   ├── settings.yaml      # General settings (ports, services, SIEM integration)
-│   └── rules.yaml         # Behavior rules (e.g., brute force → service switch)
+│   ├── settings.yaml        # General settings (ports, services, SIEM integration)
+│   └── rules.yaml           # Behavior rules (e.g., brute force → service switch)
 │
 ├── core/
 │   ├── __init__.py
-│   ├── honeypot.py        # Honeypot core logic
-│   ├── ssh_service.py     # Fake SSH service
-│   ├── http_service.py    # Fake HTTP service
-│   └── ftp_service.py     # Optional fake FTP service
+│   ├── honeypot.py          # Honeypot core logic
+│   ├── ssh_service.py       # Fake SSH service
+│   ├── http_service.py      # Fake HTTP service
+│   └── ftp_service.py       # Optional fake FTP service
 │
 ├── analysis/
 │   ├── __init__.py
-│   ├── log_collector.py   # Collects logs
-│   ├── pattern_analyzer.py# Regex/ML-based attack analysis
-│   └── decision_engine.py # Adaptive service switching
+│   ├── log_collector.py     # Collects logs
+│   ├── pattern_analyzer.py  # Regex/ML-based attack analysis
+│   └── decision_engine.py   # Adaptive service switching
 │
 ├── integration/
 │   ├── __init__.py
-│   ├── siem_connector.py  # Splunk/ELK integration
-│   ├── alert_system.py    # Email/webhook alerts
-│   └── dashboard.py       # Flask/Django visualization
+│   ├── siem_connector.py    # Splunk/ELK integration
+│   ├── alert_system.py      # Email/webhook alerts
+│   └── dashboard.py         # Flask/Django visualization
 │
 ├── deployment/
-│   ├── dockerfile         # Docker image
-│   ├── vagrantfile        # Optional VM setup
-│   └── sandbox_setup.sh   # Isolation script
+│   ├── dockerfile           # Docker image
+│   ├── vagrantfile          # Optional VM setup
+│   └── sandbox_setup.sh     # Isolation script
 │
 └── tests/
-    ├── test_core.py       # Tests for honeypot modules
-    ├── test_analysis.py   # Tests for analyzer & decision engine
-    └── test_integration.py# Tests for SIEM & alert system
+    ├── test_core.py         # Tests for honeypot modules
+    ├── test_analysis.py     # Tests for analyzer & decision engine
+    └── test_integration.py  # Tests for SIEM & alert system
 ```
 
 ---
