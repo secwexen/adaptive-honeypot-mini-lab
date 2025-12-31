@@ -22,7 +22,8 @@ Designed as a **short-term demo project**, deployable on Raspberry Pi or Docker.
 ```
 adaptive-honeypot/
 │
-├── README.md              
+├── README.md
+├── LICENSE                
 ├── requirements.txt       
 ├── docker-compose.yml     
 │
